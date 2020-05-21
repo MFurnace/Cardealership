@@ -6,60 +6,66 @@ public class LightTruck {
         private long towingCapacity, grossCombinedWeight, truckWeight;
         private boolean is4wd;
 
-        public LightTruck (String VIN, double wholesaleCost, double retailPrice, int
-        modelYear, String make, String model, String color long towingCapacity, long truckWeight, boolean 
-        is4wd) {
-
-            super (VIN,wholesaleCost, retailPrice, modelYear, make, model, color);
-            this.towingcapacity = towingCapacity;
-            this.truckWeight = truckWeight;
-            this.is4wd = is4wd;
-            this.grossCombinedWeight = this.towingCapacity + this.truckWeight;
+        // Constructor with both inherited properties and new properites
+        public LightTruck(String VIN, double wholesaleCost, double retailPrice, int modelYear, String make, String model,
+        String color, long towingCapacity, long truckWeight, boolean is4wd, VehicleClassification vehicleClass) {
+        super(VIN, wholesaleCost, retailPrice, modelYear, make, model, color, vehicleClass);
+        this.towingCapacity = towingCapacity;
+        this.truckWeight = truckWeight;
+        this.is4wd = is4wd;
+        this.grossCombinedWeight = this.towingCapacity + this.truckWeight;
         }
 
-        //Getters
-        public long getTowingCapacity(){
-            return this.towingCapacity;
-        }
-        public long getTruckWeight(){
-            return this.truckWeight;
-        }
-        public long getGrossCombinedWeight(){
-            return this.grossCombinedWeight;
-        }
-        public boolean is4wd(){
-            return this.is4wd;
+        // Getters
+        public long getTowingCapacity() {
+        return this.towingCapacity;
         }
 
-        //Setters
-        public void setTowingCapacity(long towingCapacity){
-            this.towingCapacity = towingCapacity;
+        public long getTruckWeight() {
+        return this.truckWeight;
         }
-        public void setTruckWeight(long truckWeight){
-            this.truckWeight = truckWeight;
+
+        public long getGrossCombinedWeight() {
+        return this.grossCombinedWeight;
         }
-        //Method to automatically calculate GCW if no params are given
-        public void setGrossCombinedWeight(long weight){
-            this.grossCombinedWeight = this.truckWeight + this.towingCapacity;
+
+        public boolean getIs4wd() {
+        return this.is4wd;
         }
-        //Method Overload to manually set GCW if params are given
-        public void setGrossCombinedWeight(long weight){
-            this.grossCombinedWeight = weight;
+
+        // Setters
+        public void setTowingCapacity(long towingCapacity) {
+        this.towingCapacity = towingCapacity;
         }
-        public void setis4wd(boolean is4wd){
-            this.is4wd = is4wd;
+
+        public void setTruckWeight(long weight) {
+        this.truckWeight = weight;
+        }
+
+        // Method to automatically calculate GCW if no params given
+        public void setGrossCombinedWeight() {
+        this.grossCombinedWeight = this.truckWeight + this.towingCapacity;
+        }
+
+        // Method Overload to manually set GCW if param is provided
+        public void setGrossCombinedWeight(long weight) {
+        this.grossCombinedWeight = weight;
+        }
+
+        public void setIs4wd(boolean is4wd) {
+        this.is4wd = is4wd;
         }
 
         @Override
-        public String toString(){
-            //Get the string output from our "default" superClass method
-            // Example: 2018 Kia Sorrento
-            //and store that in a variable for us to use
-            String str = super.toString();
-            //if 4wd, signify that in return string
-            if (is4wd){
-                str += ", (4 WD)"; //appends string to end of our str variable
-            }
-            return str;
+        public String toString() {
+        // Get the string output from our "default" superclass method
+        // Example: 2018 Kia Sorrento
+        // and store that in a variable for us to use
+        String str = super.toString();
+        // If 4WD, signify that in return string
+        if (is4wd) {
+            str += ", (4 WD)"; // appends string to end of our str variable
         }
-}
+        return str;
+        }
+      }

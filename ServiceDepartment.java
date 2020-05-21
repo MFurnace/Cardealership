@@ -5,7 +5,7 @@ public class ServiceDepartment extends Departments {
     }
 
     @Override
-    public boolean isOPenToday(LocalDateTime day){
+    public boolean isOpenToday(LocalDateTime day){
         if (day.getDayOfWeek().equals(DayOfWeek.SUNDAY)){
             return false;
         }else{
