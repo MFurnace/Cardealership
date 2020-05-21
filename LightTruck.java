@@ -16,6 +16,8 @@ public class LightTruck {
         this.grossCombinedWeight = this.towingCapacity + this.truckWeight;
 
         if (this.is4wd ==true){
+            //create new TransferCase object if LightTruck is 4Wd
+            //& store object in variable xferCase
             this.xferCase = new TransferCase();
         }
         }
@@ -86,6 +88,7 @@ public class LightTruck {
                 return this.numGears;
             }
         }
+        //creating a variable 
            public TransferCase xferCase;
       }
     }
