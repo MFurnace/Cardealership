@@ -14,6 +14,10 @@ public class LightTruck {
         this.truckWeight = truckWeight;
         this.is4wd = is4wd;
         this.grossCombinedWeight = this.towingCapacity + this.truckWeight;
+
+        if (this.is4wd ==true){
+            this.xferCase = new TransferCase();
+        }
         }
 
         // Getters
@@ -68,4 +72,20 @@ public class LightTruck {
         }
         return str;
         }
+        //object being created inside another object
+        public class TransferCase {
+            private int numGears;
+
+            public TransferCase(){
+                this.numGears = 4;
+            }
+            public TransferCase(int gears){
+                this.numGears = gears;
+            }
+            public int getNumGears(){
+                return this.numGears;
+            }
+        }
+           public TransferCase xferCase;
       }
+    }
